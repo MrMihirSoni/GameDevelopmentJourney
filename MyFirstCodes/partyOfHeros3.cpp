@@ -6,9 +6,7 @@ protected:
     int coolDown = 0;
 
 public:
-    virtual void attack(){
-        std::cout<<"Hero attacked with bare hands\n";
-    }
+    virtual void attack() = 0;
 
     virtual void spAttack() = 0;
 
@@ -140,6 +138,8 @@ int main() {
     battleAll(party);
     spBattle(party);
     
+    for (Hero* hero : party) delete hero;
+
     return 0;
 
 }
